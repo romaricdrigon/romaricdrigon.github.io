@@ -1,17 +1,16 @@
 # Site settings
 title: "Romaric Drigon"
 email: romaric.drigon@gmail.com
-description: >
+description: |-
     Software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
     Interested in all things Symfony related ; devops ; web development.
     Symfony certified expert, consultant.
     Available for contracts.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://romaricdrigon.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: romaricdrigon
-#github_username: romaricdrigon
 show_excerpts: true
 permalink: /:year/:month/:day/:title
+timezone: 'Europe/Zurich'
 
 # Build settings
 markdown: kramdown
@@ -32,9 +31,9 @@ plugins:
 #   - vendor/ruby/
 
 # Theme settings
+twitter_username: romaricdrigon
+github_username: romaricdrigon
+linkedin_username: romaricdrigon
+rss: RSS feed
 minima:
-    date_format: "%d-%m-%Y %H:%M"
-    social_links:
-        twitter: romaricdrigon
-        github: romaricdrigon
-        linkedin: Romaric Drigon
+    date_format: "%d/%m/%Y %H:%M"
