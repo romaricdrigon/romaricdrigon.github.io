@@ -12,6 +12,8 @@ in French, I wanted to start writing in English too. Hence this blog!
 I will continue publishing articles on both, though. They will have different topics and approaches.  
 Here, I will try to dig into more advanced Symfony topics.
 
+<!-- more-->
+
 Being a personal blog, you may also find my thoughts and opinions about
 web development or software engineering, in general.  
 On "Talks" page, I will post all my slides from past conferences, and upcoming events I will attend.
