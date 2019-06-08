@@ -2,10 +2,15 @@
 title: "Romaric Drigon"
 email: romaric.drigon@gmail.com
 description: |-
-    Software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
-    Interested in all things Symfony related ; devops ; web development.
-    Symfony certified expert, consultant.
-    Available for contracts.
+  Romaric Drigon's personal blog.
+  I'm a software engineer at netinfluence, in Lausanne, Switzerland.
+  I write mainly about web development and Symfony framework.
+  From time to time, I will publish opinion posts about web development,
+  websecurity or software engineering in general.
+#    Software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
+#    Interested in all things Symfony related ; devops ; web development.
+#    Symfony certified expert, consultant.
+#    Available for contracts.
 url: "https://romaricdrigon.github.io/"
 baseurl: "" # the subpath of your site
 show_excerpts: true
@@ -13,12 +18,22 @@ excerpt_separator: "<!-- more-->"
 permalink: /:year/:month/:day/:title
 timezone: 'Europe/Zurich'
 
+# Socials, also used by SEO tag plugin
+author:
+  twitter: romaricdrigon
+  picture: assets/images/romaric.jpg
+twitter:
+  username: romaricdrigon
+  card: summary
+logo: assets/images/romaric.jpg
+
 # Build settings
 markdown: kramdown
 theme: minima
 plugins: # Github Pages plugins we are using
-    - jekyll-feed
-    - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing. Default values below.
 # exclude:
@@ -41,4 +56,4 @@ github_username: romaricdrigon
 linkedin_username: romaricdrigon
 rss: RSS feed
 minima:
-    date_format: "%d/%m/%Y %H:%M"
+  date_format: "%d/%m/%Y %H:%M"
