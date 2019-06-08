@@ -6,8 +6,8 @@ description: |-
     Interested in all things Symfony related ; devops ; web development.
     Symfony certified expert, consultant.
     Available for contracts.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://romaricdrigon.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://romaricdrigon.github.io/"
+baseurl: "" # the subpath of your site
 show_excerpts: true
 excerpt_separator: "<!-- more-->"
 permalink: /:year/:month/:day/:title
@@ -19,9 +19,7 @@ theme: minima
 plugins:
     - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# Exclude from processing. Default values below.
 # exclude:
 #   - Gemfile
 #   - Gemfile.lock
@@ -31,6 +29,11 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# Feed plugin - we have an extra feed for Symfony Posts
+feed:
+  categories:
+    - symfony
+    
 # Theme settings
 twitter_username: romaricdrigon
 github_username: romaricdrigon
