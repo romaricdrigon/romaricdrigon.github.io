@@ -16,8 +16,9 @@ timezone: 'Europe/Zurich'
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
+plugins: # Github Pages plugins we are using
     - jekyll-feed
+    - jekyll-sitemap
 
 # Exclude from processing. Default values below.
 # exclude:
@@ -33,7 +34,7 @@ plugins:
 feed:
   categories:
     - symfony
-    
+
 # Theme settings
 twitter_username: romaricdrigon
 github_username: romaricdrigon
