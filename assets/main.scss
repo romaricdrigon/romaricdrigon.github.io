@@ -8,7 +8,7 @@
 */
 
 .post-list {
-    h3 {
+    h2 {
         margin-bottom: 3px;
     }
     .post-meta {
@@ -28,8 +28,8 @@ svg.rss-icon {
     Our extra elements
 */
 
-// We remove overlap effect below that size
-// We re-use breakpoint from theme
+// We remove overlap effect below that size.
+// We re-use breakpoint from theme.
 $img-breakpoint: 800px;
 
 .post-img {
@@ -63,4 +63,8 @@ $img-breakpoint: 800px;
     @media screen and (max-width: $img-breakpoint) {
         margin-top: 0;
     }
+}
+
+.image-desc {
+    font-style: italic;
 }
