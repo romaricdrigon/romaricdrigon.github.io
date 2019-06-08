@@ -1,0 +1,30 @@
+{% comment %} Copied from https://github.com/jekyll/minima/blob/v2.5.0/_layouts/default.html {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      {% if page.image %}
+        <div class="post-img">
+          <img srcset="{{ page.image | relative_url }} 400w,
+             {{ page.image | relative_url }} 1024w"
+            src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+        </div>
+      {% endif %}
+
+      <div class="wrapper{% if page.image %} with-img{% endif %}">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

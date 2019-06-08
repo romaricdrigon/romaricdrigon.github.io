@@ -1,8 +1,11 @@
 ---
-# Some customization over Minima provided CSS
 ---
 
 @import "minima";
+
+/*
+    Some customization over Minima provided CSS
+*/
 
 .post-list {
     h3 {
@@ -19,4 +22,45 @@
 
 svg.rss-icon {
     fill: #f26522;
+}
+
+/*
+    Our extra elements
+*/
+
+// We remove overlap effect below that size
+$post-img-breakpoint: 1024px;
+
+.post-img {
+    position: relative;
+    z-index: -100;
+    width: 80%;
+    max-width: 1280px;
+    height: 420px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1279px) {
+        width: 90%; // To display more on smaller screens
+    }
+    @media screen and (max-width: $post-img-breakpoint - 1) {
+        max-height: 40vh;
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+    }
+}
+
+.wrapper.with-img {
+    margin-top: -120px;
+    padding-top: 22px;
+    background: $background-color;
+
+    @media screen and (max-width: $post-img-breakpoint - 1) {
+        margin-top: 0;
+    }
 }
