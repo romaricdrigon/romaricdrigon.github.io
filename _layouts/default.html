@@ -11,10 +11,38 @@
 
     <main class="page-content" aria-label="Content">
       {% if page.image %}
+        {%- comment %}
+          We are using Cloudinary to transform images, and named transformations.
+          We resize those (w_ and h_, default quality of 80) according to what CSS will display,
+          cropping parts outside of those dimension (c_lfill, default gravity g_center).
+          Sizes were selected based on common devices & we have to handle different DPR using 2x.
+        {% endcomment %}
+        {% assign base_path = 'https://res.cloudinary.com/duiajlyml/image/upload' %}
         <div class="post-img">
-          <img srcset="{{ page.image | relative_url }} 400w,
-             {{ page.image | relative_url }} 1024w"
-            src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+          <picture>
+            <source
+              media="(max-width: 480px)"
+              srcset="{{ base_path }}/w_480,h_350,c_lfill,f_auto/dpr_1.0/githubio/{{ page.image }},
+                      {{ base_path }}/w_480,h_350,c_lfill,f_auto/dpr_2.0/githubio/{{ page.image }} 2x">
+            <source   {% comment %} Until 800px, the image is 100% {% endcomment %}
+              media="(max-width: 800px)"
+              srcset="{{ base_path }}/w_800,h_420,c_lfill,f_auto/dpr_1.0/githubio/{{ page.image }},
+                      {{ base_path }}/w_800,h_420,c_lfill,f_auto/dpr_2.0/githubio/{{ page.image }} 2x">
+            <source   {% comment %} At 1024px, image is 90% = 922px {% endcomment %}
+              media="(max-width: 1024px)"
+              srcset="{{ base_path }}/w_922,h_420,c_lfill,f_auto/dpr_1.0/githubio/{{ page.image }},
+                      {{ base_path }}/w_922,h_420,c_lfill,f_auto/dpr_2.0/githubio/{{ page.image }} 2x">
+            <source   {% comment %} 90% of 1280px = 1152px {% endcomment %}
+              media="(max-width: 1280px)"
+              srcset="{{ base_path }}/w_1152,h_420,c_lfill,f_auto/dpr_1.0/githubio/{{ page.image }},
+                      {{ base_path }}/w_1152,h_420,c_lfill,f_auto/dpr_2.0/githubio/{{ page.image }} 2x">
+            <source {% comment %} After, the image is always 1280px {% endcomment %}
+              srcset="{{ base_path }}/w_1280,h_420,c_lfill,f_auto/dpr_1.0/githubio/{{ page.image }},
+                      {{ base_path }}/w_1280,h_420,c_lfill,f_auto/dpr_2.0/githubio/{{ page.image }} 2x">
+            <img
+              src="{{ base_path }}/w_1280,h_420,c_lfill,f_auto/dpr_auto/githubio/{{ page.image }}"
+              alt="{{ page.title }}">
+          </picture>
         </div>
       {% endif %}
 

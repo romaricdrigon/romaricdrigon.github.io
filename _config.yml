@@ -34,9 +34,10 @@ plugins: # Github Pages plugins we are using
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - resize_img
 sass:
   style: compressed
-  
+
 # Exclude from processing. Default values below.
 # exclude:
 #   - Gemfile
