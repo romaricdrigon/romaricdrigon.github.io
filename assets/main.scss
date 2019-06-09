@@ -1,4 +1,5 @@
 ---
+# Original SCSS file: https://github.com/jekyll/minima/blob/master/_sass/minima.scss
 ---
 
 @import "minima";
@@ -6,6 +7,17 @@
 /*
     Some customization over Minima provided CSS
 */
+
+.post-title {
+    font-size: 36px;
+}
+
+.post-content h2 {
+    font-size: 28px;
+}
+p + h2 {
+    margin-top: 20px;
+}
 
 .site-header {
     border-top: none;
@@ -63,7 +75,8 @@ $img-breakpoint: 800px;
     padding: 0;
 
     .wrapper {
-        padding: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
 
         &.with-img {
             margin-top: -120px;
