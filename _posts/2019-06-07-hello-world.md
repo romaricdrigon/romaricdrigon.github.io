@@ -23,7 +23,7 @@ Here, I will try to dig into more advanced Symfony topics.
 
 Being a personal blog, you may also find opinion posts about
 web development or software engineering, in general.  
-On "Talks" page, I will post all my slides from past conferences, and upcoming events I will attend.
+On "Talks" page, I will post all my slides from past conferences, and upcoming events I will speak to.
 
 I wanted a minimalistic but not austere design.
 I don't quite like meaningless stock photos, so being a hiking addict,
