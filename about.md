@@ -4,11 +4,20 @@ title: About
 permalink: /about/
 ---
 
+<img src="/assets/images/romaric.jpg" class="profile-img" />
 
-Software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
-Interested in all things Symfony related ; devops ; web development.
-Symfony certified expert, consultant.
+I'm a software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
+I focus mostly on web development, and Symfony framework (certified expert).
+I do some Javascript and devops regulary, too.
+
+I blog here, in English, and on [netinfluence's blog](https://blog.netinfluence.ch), in French.  
+I attend a few conferences every year and occasionnaly do public speaking.
+More informations on [Talks]({% link talks.md %}) page.
+
 Available for contracts.
+
+
+### Contact details
 
 <ul class="social-media-list">
     {%- if site.email -%}<li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>{%- endif -%}

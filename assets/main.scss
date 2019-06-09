@@ -81,3 +81,16 @@ $img-breakpoint: 800px;
 .image-desc {
     font-style: italic;
 }
+
+
+/*
+    Page specific elements
+*/
+
+.profile-img {
+    display: block;
+    float: right;
+    border-radius: 5px;
+    width: 150px;
+    margin: 0 0 30px 30px;
+}
