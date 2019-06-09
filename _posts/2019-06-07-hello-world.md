@@ -21,13 +21,13 @@ Here, I will try to dig into more advanced Symfony topics.
 
 <!-- more-->
 
-Being a personal blog, you may also find my thoughts and opinions about
+Being a personal blog, you may also find opinion posts about
 web development or software engineering, in general.  
 On "Talks" page, I will post all my slides from past conferences, and upcoming events I will attend.
 
-Usually I find technical blogs a little big plain _design-wise_.
-I don't quite like meaningless stock photos, so being a travel and hiking addicts,
-you will see some personal photos to illustrate here and here. So you can enjoy the view too :)
+I wanted a minimalistic but not austere design.
+I don't quite like meaningless stock photos, so being a hiking addict,
+I will use some personal photos to illustrate here and here. So you can enjoy the view too :)
 
 Later on, I may add Disqus comments.  
 Meanwhile, the discussion continues on [Twitter](https://twitter.com/romaricdrigon)
