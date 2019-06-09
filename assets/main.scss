@@ -7,6 +7,10 @@
     Some customization over Minima provided CSS
 */
 
+.site-header {
+    border-top: none;
+}
+
 .post-list {
     h2 {
         margin-bottom: 3px;
@@ -55,13 +59,22 @@ $img-breakpoint: 800px;
     }
 }
 
-.wrapper.with-img {
-    margin-top: -120px;
-    padding-top: 22px;
-    background: $background-color;
+.page-content {
+    padding: 0;
 
-    @media screen and (max-width: $img-breakpoint) {
-        margin-top: 0;
+    .wrapper {
+        padding: 30px;
+
+        &.with-img {
+            margin-top: -120px;
+            padding-top: 22px;
+            padding-bottom: 30px;
+            background: $background-color;
+
+            @media screen and (max-width: $img-breakpoint) {
+                margin-top: 0;
+            }
+        }
     }
 }
 
