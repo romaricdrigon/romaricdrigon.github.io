@@ -31,10 +31,9 @@ logo: assets/images/romaric.jpg
 markdown: kramdown
 theme: minima
 plugins: # Github Pages plugins we are using
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - resize_img
+  # we don't use Feed plugin to better control the generated content
 sass:
   style: compressed
 
@@ -47,11 +46,6 @@ sass:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-# Feed plugin - we have an extra feed for Symfony Posts
-feed:
-  categories:
-    - symfony
 
 # Theme settings
 twitter_username: romaricdrigon
