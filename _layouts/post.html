@@ -13,8 +13,8 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.image-desc -%}
-         - <span class="image-desc">Picture: {{ page.image-desc }}</span>
+      {%- if page.image.description -%}
+         - <span class="image-desc">Picture: {{ page.image.description }}</span>
       {%- endif -%}
       {%- if page.author -%}
         - <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>

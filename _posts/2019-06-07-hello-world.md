@@ -6,8 +6,10 @@ categories: general
 description: |-
   After blogging for a while on [https://blog.netinfluence.ch](https://blog.netinfluence.ch),
   in French, I wanted to start writing in English too. Hence this blog!
-image: assets/images/posts/montblanc.jpg
-image-desc: Mont-Blanc from Lac Blanc, Chamonix
+image:
+  file: assets/images/posts/montblanc.jpg
+  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/montblanc.jpg
+  description: Mont-Blanc from Lac Blanc, Chamonix
 ---
 
 Welcome to my blog!

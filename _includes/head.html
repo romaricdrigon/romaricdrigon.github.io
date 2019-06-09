@@ -6,12 +6,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
+  {%- seo | replace: "property="og:image", "foo" -%}
 
   {%- if page.image -%}
-    <meta property="twitter:image" content="{{ 'https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/' | append: page.image }}" />
+    <meta property="twitter:image" content="{{ page.image.facebook }}" />
   {%- endif -%}
-  <meta property="twitter:title" content="{{ page.title }}" />
+  <meta property="twitter:title" content="{{ page.title }} - {{ site.title }}" />
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}

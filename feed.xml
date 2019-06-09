@@ -80,11 +80,10 @@
         <summary type="html">{{ post.excerpt | strip_html | normalize_whitespace | xml_escape }}</summary>
       {%- endif -%}
 
-      {%- if post.image -%}
-        {% assign cloudinary_path = 'https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/'  %}
+      {%- if post.image.facebook -%}
         <media:thumbnail
           xmlns:media="http://search.yahoo.com/mrss/"
-          url="{{ cloudinary_path | append: post.image | xml_escape }}"
+          url="{{ post.image.facebook | xml_escape }}"
           width="1024" />
       {%- endif -%}
     </entry>
