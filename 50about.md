@@ -17,7 +17,7 @@ More informations on [Talks]({% link 20talks.md %}) page.
 Available for contracts.
 
 
-### Contact details
+## Contact details
 
 <ul class="social-media-list">
     {%- if site.email -%}<li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>{%- endif -%}
