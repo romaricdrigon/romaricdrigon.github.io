@@ -95,6 +95,60 @@ $img-breakpoint: 800px;
     font-style: italic;
 }
 
+.comments {
+    h2 {}
+
+    .comments-list {
+        @extend %clearfix;
+
+        .comment {
+            margin-bottom: 20px;
+
+            .author-img {
+                float: left;
+                padding: 15px 0 0 15px;
+                width: 50px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .comment-body {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+                padding: 10px 15px 0 0;
+
+                .comment-meta {
+                    color: $grey-color;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .comment-btn-wrapper {
+        text-align: right;
+    }
+
+    .btn {
+        display: inline-block;
+        text-align: right;
+        visibility: hidden; // We use visibility not to make the page "jump"
+        font-size: $base-font-size;
+        border: none;
+        padding: 6px 12px 8px 12px;
+        margin-top: 15px;
+        border-radius: 5px;
+        color: #fff;
+        background: $brand-color;
+        text-decoration: none !important;
+
+        svg {
+            fill: #fff;
+        }
+    }
+}
 
 /*
     Page specific elements

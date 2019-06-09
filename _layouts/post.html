@@ -29,5 +29,21 @@ layout: default
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="commentsList" class="comments-list"></div>
+    <div class="comment-btn-wrapper">
+      <a id="commentBtn" class="btn" href="#" target="_blank">
+        <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+        Join the discussion
+      </a>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var articleId = '{{ page.id }}';
+  </script>
+  <script src="{{ "/assets/jquery-3.4.1.min.js" | relative_url }}" charset="utf-8"></script>
+  <script src="{{ "/assets/github-comments.js" | relative_url }}" charset="utf-8"></script>
+
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
