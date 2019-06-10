@@ -14,7 +14,7 @@ description: |-
 url: "https://romaricdrigon.github.io/"
 baseurl: "" # the subpath of your site
 show_excerpts: true
-excerpt_separator: "<!-- more-->"
+excerpt_separator: "<!-- more -->"
 permalink: /:year/:month/:day/:title
 timezone: 'Europe/Zurich'
 

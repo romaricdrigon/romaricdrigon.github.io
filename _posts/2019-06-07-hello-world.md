@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World"
 date: 2019-06-07 19:17:36 +0200
-categories: general
+categories: [general]
 description: |-
   After blogging for a while on [https://blog.netinfluence.ch](https://blog.netinfluence.ch),
   in French, I wanted to start writing in English too. Hence this blog!
@@ -20,7 +20,7 @@ in French, I wanted to start writing in English too. Hence this blog!
 I will continue publishing articles on both, though. They will have different topics and approaches.
 Here, I will try to dig into more advanced Symfony topics.
 
-<!-- more-->
+<!-- more -->
 
 Being a personal blog, you may also find opinion posts about
 web development or software engineering, in general.  

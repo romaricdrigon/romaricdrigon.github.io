@@ -15,18 +15,20 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <div class="post-list">
       {%- for post in site.posts -%}
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h2>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <div class="post-meta">{{ post.date | date: date_format }}</div>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+        <div class="post">
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h2>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="post-meta">{{ post.date | date: date_format }}</div>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
 
-          <a href="{{ post.url | relative_url }}" class="read-more">[more…]</a>
-        {%- endif -%}
+            <a href="{{ post.url | relative_url }}" class="read-more">[more…]</a>
+          {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
   {%- endif -%}

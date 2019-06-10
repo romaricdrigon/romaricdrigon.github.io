@@ -15,8 +15,8 @@
 .post-content h2 {
     font-size: 28px;
 }
-p + h2 , ul + h2 {
-    margin-top: 20px;
+p + h2 , ul + h2, table + h2 {
+    margin-top: 25px;
 }
 
 .site-header {
@@ -43,6 +43,12 @@ svg.rss-icon {
 /*
     Our extra elements
 */
+
+.post-list {
+    .post {
+        margin-bottom: 30px;
+    }
+}
 
 // We remove overlap effect below that size.
 // We re-use breakpoint from theme.
