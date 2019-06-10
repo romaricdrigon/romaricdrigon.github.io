@@ -10,6 +10,7 @@ image:
   file: assets/images/posts/montblanc.jpg
   facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/montblanc.jpg
   description: Mont-Blanc from Lac Blanc, Chamonix
+commentIssueNumber: 3
 ---
 
 Welcome to my blog!

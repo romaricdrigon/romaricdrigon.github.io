@@ -31,7 +31,10 @@ layout: default
 
   <div class="comments">
     <h2>Comments</h2>
-    <div id="commentsList" class="comments-list"></div>
+    <div id="commentsList" class="comments-list"
+      data-article-id="{{ page.id }}"
+      data-issue-number="{{ page.commentIssueNumber }}">
+    </div>
     <div class="comment-btn-wrapper">
       <a id="commentBtn" class="btn" href="#" target="_blank">
         <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
@@ -39,9 +42,6 @@ layout: default
       </a>
     </div>
   </div>
-  <script type="text/javascript">
-    var articleId = '{{ page.id }}';
-  </script>
   <script src="{{ "/assets/jquery-3.4.1.min.js" | relative_url }}" charset="utf-8"></script>
   <script src="{{ "/assets/github-comments.js" | relative_url }}" charset="utf-8"></script>
 

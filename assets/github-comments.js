@@ -1,7 +1,9 @@
-(function($, articleId) {
+(function($) {
   const repoName = 'romaricdrigon/romaricdrigon.github.io';
   const githubApiUrl = 'https://api.github.com';
   const $comments = $('#commentsList');
+  const articleId = $comments.attr('data-article-id');
+  let cachedIssueNumber = $comments.attr('data-issue-number');
 
   let showCommentButton = function(issueNumber) {
     $('#commentBtn')
@@ -29,11 +31,19 @@
 
   let loadCommentsForIssue = function(issueNumber) {
     $.ajax({
-      url: `${githubApiUrl}/repos/${repoName}/issues/${issueNumber}/comments`,
+      url: `${githubApiUrl}/repos/${repoName}/issues/${issueNumber}/comments`
     }).fail(function() {
-      $comments.html('<p>Comments could not be loaded</p>');
-      showCommentButton();
-    }).done(function(data) {
+      $comments.html('<p>Comments could not be loaded.</p>');
+
+      if (issueNumber) {
+        showCommentButton();
+      }
+    }).done(function(data, textStatus, jqXHR) {
+      if (!data) {
+        $comments.html('<p>There are no comments yet on this post.</p>');
+        showCommentButton(issueNumber);
+      }
+
       $comments.empty();
       showCommentButton(issueNumber);
 
@@ -41,22 +51,16 @@
     });
   };
 
-  let initialize = function() {
-    if (!$comments || !articleId) {
-      return;
-    }
-
-    $comments.html('<p>Comments are loading...</p>');
-
+  let searchIssueNumber = function() {
     let query = encodeURIComponent(`repo:${repoName} ${articleId}`);
 
     $.ajax({
       url: `${githubApiUrl}/search/issues?q=${query}`,
     }).fail(function() {
-      $comments.html('<p>Comments could not be loaded</p>');
+      $comments.html('<p>Comments could not be loaded.</p>');
     }).done(function(data) {
       if (!data.total_count) {
-        $comments.html('<p>Comments are not open (yet) on this article</p>');
+        $comments.html('<p>Comments are not open (yet) on this article.</p>');
 
         return;
       }
@@ -78,5 +82,21 @@
     });
   };
 
+  let initialize = function() {
+    if (!$comments || !articleId) {
+      return;
+    }
+
+    $comments.html('<p>Comments are loading...</p>');
+
+    if (cachedIssueNumber) {
+      loadCommentsForIssue(cachedIssueNumber);
+
+      return;
+    }
+
+    searchIssueNumber();
+  };
+
   initialize();
-})(jQuery, articleId);
+})(jQuery);
