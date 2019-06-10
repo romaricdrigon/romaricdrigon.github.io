@@ -12,8 +12,21 @@
     font-size: 36px;
 }
 
-.post-content h2 {
-    font-size: 28px;
+.post-content {
+    h2 {
+        font-size: 28px;
+    }
+
+    img {
+        display: block;
+        margin: 30px auto;
+
+        & + em {
+            display: block;
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+    }
 }
 p + h2 , ul + h2, table + h2 {
     margin-top: 25px;

@@ -24,22 +24,33 @@ Doctrine ORM offers 3 different type of inheritance mapping ([reference document
 
 Let's start with Single and Multiple Class Inheritance. Those types change database schema, let's try to understand how data is stored.  
 Imagine we have 3 entities, a Blog `Article`, `ArticleWithPicture` and `ArticleWithVideo`. `Article` entity has a few properties, and each child has some additional properties.
-On top of that, Doctrine requires the parent entity to have a "discriminator" colum, which will contain the type of the entity (string). We call that one `discr`, and we assume the class name in snake case is used.
+On top of that, Doctrine requires the parent entity to have a "discriminator" colum, which will contain the type of the entity (string). We call that one `discr`, and we assume the class name in snake case is used.  
 
-| Article |
-| ------- |
-| title   |
-| content |
-| discr   |
+<!-- PlantUML schema:
+  @startuml
 
-| ArticleWithPicture |
-| ------ |
-| picturePath |
+  Article <|-- ArticleWithPicture
+  Article <|-- ArticleWithVideo
 
-| ArticleWithVideo |
-| ------ |
-| videoPath |
+  class Article {
+    #title
+    #content
+    #discr
+  }
 
+  class ArticleWithPicture {
+    -picturePath
+  }
+
+  class ArticleWithVideo {
+    -videoPath
+  }
+
+  @enduml
+-->
+
+![UML schema](/assets/images/content/doctrine-inheritance-uml.png)
+*UML schema of our example*
 
 ### Single Table Inheritance
 
