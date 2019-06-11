@@ -4,6 +4,9 @@
 
 @import "minima";
 
+// We re-use breakpoint from theme.
+$content-breakpoint: 800px;
+
 /*
     Some customization over Minima provided CSS
 */
@@ -25,6 +28,16 @@
             display: block;
             text-align: center;
             margin: 0 0 30px 0;
+        }
+    }
+
+    @media screen and (max-width: $content-breakpoint) {
+        // We want table to scroll on modile, instead of breaking layout
+        table {
+            display: inline-block;
+            max-width: 100%;
+            width: auto;
+            overflow-x: auto;
         }
     }
 }
@@ -63,10 +76,6 @@ svg.rss-icon {
     }
 }
 
-// We remove overlap effect below that size.
-// We re-use breakpoint from theme.
-$img-breakpoint: 800px;
-
 .post-img {
     position: relative;
     min-width: 740px;
@@ -76,7 +85,8 @@ $img-breakpoint: 800px;
     z-index: -100;
     margin: 0 auto;
 
-    @media screen and (max-width: $img-breakpoint) {
+    // We remove overlap effect below that size.
+    @media screen and (max-width: $content-breakpoint) {
         max-height: 40vh;
         width: 100%;
         min-width: auto;
@@ -103,7 +113,7 @@ $img-breakpoint: 800px;
             padding-bottom: 30px;
             background: $background-color;
 
-            @media screen and (max-width: $img-breakpoint) {
+            @media screen and (max-width: $content-breakpoint) {
                 margin-top: 0;
             }
         }
