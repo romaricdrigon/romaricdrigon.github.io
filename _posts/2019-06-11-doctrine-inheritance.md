@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "About Doctrine inheritance"
-date: 2019-06-10 19:06:30 +0200
-categories: [symfony, doctrine]
+date: 2019-06-11 12:35:30 +0200
+categories: [Symfony, Doctrine]
 image:
   file: assets/images/posts/diablerets.jpg
   facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/diablerets.jpg
-  description: Diablerets glacier and "refuge de l'espace", from Quille du diable
-#commentIssueNumber: 3
+  description: Diablerets glacier, from Quille du diable
+  gravity: g_north
+commentIssueNumber: 4
 ---
 
 At a previous SymfonyLive conference [(slides here, in French)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed), I advised not to use Doctrine inheritance mapping. After a discussion with another developper last week, I realized the subject is worth an article with more details.
@@ -110,4 +111,4 @@ Oustide of that very specific scenario, ie. of a bundle providing a "base" entit
 
 ## Final word
 
-I hope the different mode of Doctrine inheritance mapping, and their limitations, are clearer now. Most of the time, I think we want to achieve code reuse, or de-duplication, instead of _real_ polymorphism. PHP has a built-in mechanism for that: **traits**. Doctrine ORM support those out of the box, without any additional configuration. So, as a final word, you may want to consider using traits next time you want to share some properties accross entities.
+I hope the different mode of Doctrine inheritance mapping, and their limitations, are clearer now. Most of the time, I think we want to achieve code reuse, or de-duplication, instead of _real_ polymorphism. PHP has a built-in mechanism for that: **traits**. Doctrine ORM supports those out of the box (for scalar values, ie., not associations), without any additional configuration. So, as a final word, you may want to consider using traits next time you want to share some properties accross entities.
