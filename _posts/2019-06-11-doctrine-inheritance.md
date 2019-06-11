@@ -5,7 +5,7 @@ date: 2019-06-11 12:35:30 +0200
 categories: [Symfony, Doctrine]
 image:
   file: assets/images/posts/diablerets.jpg
-  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,g_north/githubio/assets/images/posts/diablerets.jpg
+  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill,g_north/githubio/assets/images/posts/diablerets.jpg
   description: Diablerets glacier, from Quille du diable
   gravity: g_north
 commentIssueNumber: 4
