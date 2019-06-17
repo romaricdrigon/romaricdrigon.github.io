@@ -152,6 +152,10 @@ svg.rss-icon {
                     color: $grey-color;
                     margin-bottom: 5px;
                 }
+
+                .comment-content {
+                    white-space: pre-wrap;
+                }
             }
         }
     }
