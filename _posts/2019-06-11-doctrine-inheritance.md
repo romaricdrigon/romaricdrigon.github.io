@@ -11,7 +11,7 @@ image:
 commentIssueNumber: 4
 ---
 
-At a previous SymfonyLive conference [(slides here, in French)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed), I advised not to use Doctrine inheritance mapping. After a discussion with another developper last week, I realized the subject is worth an article with more details.
+At a previous SymfonyLive conference [(slides here, in French)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed), I advised not to use Doctrine inheritance mapping. After a discussion with another developer last week, I realized the subject is worth an article with more details.
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ Doctrine ORM offers 3 different type of inheritance mapping ([reference document
 
 Let's start with Single and Multiple Class Inheritance. Those types change database schema, let's try to understand how data is stored.  
 Imagine we have 3 entities, a Blog `Article`, `ArticleWithPicture` and `ArticleWithVideo`. `Article` entity has a few properties, and each child has some additional properties.
-On top of that, Doctrine requires the parent entity to have a "discriminator" colum, which will contain the type of the entity (string). We call that one `discr`, and we assume the class name in snake case is used.  
+On top of that, Doctrine requires the parent entity to have a "discriminator" column, which will contain the type of the entity (string). We call that one `discr`, and we assume the class name in snake case is used.  
 
 <!-- PlantUML schema:
   @startuml
@@ -63,7 +63,7 @@ Here is an example of what the `article` table could look like:
 | 2 | `article_with_picture` | `My first picture!` | `Nec devio nec...` | `romaric.jpg`| `null` |
 | 3 | `article_with_video` | `My first video` | `Aliquam et...` | `null` | `video.mp4` |
 
-This option is not quite scallable. Entities with a dozen of properties will result in an huge database, and we could be concerned about "holes" in data. For instance, in the schema, `picturePath` and `videoPath` will always be nullable.
+This option is not quite scalable. Entities with a dozen of properties will result in an huge database, and we could be concerned about "holes" in data. For instance, in the schema, `picturePath` and `videoPath` will always be nullable.
 
 
 ### Class Table Inheritance
@@ -111,4 +111,4 @@ Oustide of that very specific scenario, ie. of a bundle providing a "base" entit
 
 ## Final word
 
-I hope the different mode of Doctrine inheritance mapping, and their limitations, are clearer now. Most of the time, I think we want to achieve code reuse, or de-duplication, instead of _real_ polymorphism. PHP has a built-in mechanism for that: **traits**. Doctrine ORM supports those out of the box (for scalar values, ie., not associations), without any additional configuration. So, as a final word, you may want to consider using traits next time you want to share some properties accross entities.
+I hope the different mode of Doctrine inheritance mapping, and their limitations, are clearer now. Most of the time, I think we want to achieve code reuse, or de-duplication, instead of _real_ polymorphism. PHP has a built-in mechanism for that: **traits**. Doctrine ORM supports those out of the box (for scalar values, ie., not associations), without any additional configuration. So, as a final word, you may want to consider using traits next time you want to share some properties across entities.
