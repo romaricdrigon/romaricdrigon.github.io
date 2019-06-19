@@ -15,14 +15,14 @@ commentIssueNumber: 5
 ---
 
 _Software architecture is an extremely interesting and useful topic.
-A lack of architecture and you code will turn into some spaghetti mess.
-But if you overuse it, you code will be overcomplicated and equally hard to work with.
+A lack of architecture and your code will turn into some spaghetti mess.
+But if you overuse it, your code will be overcomplicated and equally hard to work with.
 A few years ago I dived into the academic literature, and various online sources.
-This post is the first of a series about what I learnt and what I found useful in my past professional experiences._
+This post is the first of a series about what I learnt and what I found useful in my past professional experience._
 
 <!-- more -->
 
-**Command Query Responsibility Segregation**, or CQRS, is a very popular technical subject.
+**Command Query Responsibility Segregation**, or CQRS, is a very popular technical subject.  
 A Github search of "Symfony CQRS" returned 117 repositories, including some examples on Symfony 4,
 a few bundles, a boilerplate and a skeleton (for Symfony 2/3).
 But beyond all the hype, CQRS is at core a very simple concept.
@@ -36,13 +36,13 @@ Each will have different models, respectively _queries_ (think of a "SQL query",
 A schema is worth a thousand words, let's compare see the difference in between a _standard_ architecture versus one following CQRS:
 
 ![Without CQRS](/assets/images/content/cqrs-standard.png)
-*A Blog web-app. One user reads an article, while an admin is writing a new one.*
+*A Blog web app. One user reads an article, while an admin is writing a new one.*
 
 ![With CQRS](/assets/images/content/cqrs-diagram.png)
 *The same app, implementing CQRS, with 2 different data storages for read and write (optional)*
 
 Regarding implementation, read and write models could share the same SQL database, and just have different tables.  
-Typically, one of the many reason to bring CQRS is performances.
+Typically, one of the many reason to use CQRS is performances.
 Then the read table would contain denormalized data, nested structures instead of JOIN, etc.
 It could also be updated asynchronously, so writes do not impact read performances, ie. with a bus / message queue.
 
@@ -67,8 +67,8 @@ I'm not saying this is an _optimal_ implementation. Neither what I described is 
 But I find funny than a lot of developers deal with _something close to CQRS_, without even realizing it. Without fancy names or buzzwords. Just because CQRS is a way to solve real problems, and it is not as complex as you may be lead to believe.  
 
 Personal story, on my first contract as a senior consultant, I met a team who implemented CQRS, without knowing it.
-They had a Symfony application with a SQL database full a complex, entangled, data. They had some asynchronous mechanism writing a "flat" version to ElasticSearch. And they had a lot of users - sometimes, even peaks caused by TV ads - consuming that data. They had everything, but the name.  
-Still, knowing the name of what you are doing helps. It helps you when looking for resources, both documentation and libraries. More importantly, the name helps you communicate what you are doing, in the way of a [Alexandrian language](https://fr.slideshare.net/JoshuaKerievsky/a-timeless-way-of-communicating-alexandrian-pattern-languages).
+They had a Symfony application with a SQL database full of complex, entangled, data. They had some asynchronous mechanism writing a "flat" version to ElasticSearch. And they had a lot of users - sometimes, even peaks caused by TV ads - consuming that data. They had everything, but the name.  
+Still, knowing the name of what you are doing helps. It helps when looking for resources, both documentation and libraries. More importantly, the name helps you communicate what you are doing, in the way of an [Alexandrian language](https://fr.slideshare.net/JoshuaKerievsky/a-timeless-way-of-communicating-alexandrian-pattern-languages).
 
 
 ## CQRS v2.0: Flux in the Javascript ecosystem
