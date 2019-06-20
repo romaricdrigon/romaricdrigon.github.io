@@ -55,7 +55,7 @@ by Eric Evans. But I believe it is a mistake to always introduce both together,
 they are better explained separately and they have different use cases.
 
 
-## You may already use it: Symfony and ElasticSearch
+## You may already be using it: Symfony and ElasticSearch
 
 We detailed how CQRS could be implemented, with a fast and denormalized read data storage,
 a relational (SQL) write data storage, and some asynchronous update mechanism.  
