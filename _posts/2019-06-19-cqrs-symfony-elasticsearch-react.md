@@ -2,7 +2,7 @@
 layout: post
 title: "CQRS, Symfony, ElasticSearch and React"
 date: 2019-06-19 18:24:10 +0200
-categories: [Symfony, Application architecture, ElasticSearch, Javascript]
+categories: [Symfony, Software architecture, ElasticSearch, Javascript]
 description: |
   Command Query Responsibility Segregation, or CQRS, is a very popular technical subject.
   But beyond all the hype, CQRS is at core a very simple concept.
@@ -64,7 +64,7 @@ ElasticSearch can be used as an extremely fast document data storage, with neste
 The bundle provides Doctrine listeners, and you can even [push those to a queue](https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/cookbook/doctrine-queue-listener.md).
 
 I'm not saying this is an _optimal_ implementation. Neither what I described is the only possible implementation.  
-But I find funny than a lot of developers deal with _something close to CQRS_, without even realizing it. Without fancy names or buzzwords. Just because CQRS is a way to solve real problems, and it is not as complex as you may be lead to believe.  
+But I find funny that a lot of developers deal with _something close to CQRS_, without even realizing it. Without fancy names or buzzwords. Just because CQRS is a way to solve real problems, and it is not as complex as you may be lead to believe.  
 
 Personal story, on my first contract as a senior consultant, I met a team who implemented CQRS, without knowing it.
 They had a Symfony application with a SQL database full of complex, entangled, data. They had some asynchronous mechanism writing a "flat" version to ElasticSearch. And they had a lot of users - sometimes, even peaks caused by TV ads - consuming that data. They had everything, but the name.  
