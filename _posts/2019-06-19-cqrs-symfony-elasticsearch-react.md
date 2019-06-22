@@ -16,7 +16,7 @@ commentIssueNumber: 5
 
 _Software architecture is an extremely interesting and useful topic.
 A lack of architecture and your code will turn into some spaghetti mess.
-But if you overuse it, your code will be overcomplicated and equally hard to work with.
+But if you overuse it, your code will be over complicated and equally hard to work with.
 A few years ago I dived into the academic literature, and various online sources.
 This post is the first of a series about what I learnt and what I found useful in my past professional experience._
 
@@ -42,15 +42,15 @@ A schema is worth a thousand words, let's compare see the difference in between 
 *The same app, implementing CQRS, with 2 different data storages for read and write (optional)*
 
 Regarding implementation, read and write models could share the same SQL database, and just have different tables.  
-Typically, one of the many reason to use CQRS is performances.
+Typically, one of the many reasons to use CQRS is performances.
 Then the read table would contain denormalized data, nested structures instead of JOIN, etc.
 It could also be updated asynchronously, so writes do not impact read performances, ie. with a bus / message queue.
 
 If you want to read more on the subject, there is a great article on [Martin Fowler "bliki"](https://martinfowler.com/bliki/CQRS.html) and [this post by Udi Dahan](http://udidahan.com/2009/12/09/clarified-cqrs/) which go into further detail.
 
-Just an extra note before moving on: CQRS is not related _per-se_ to Domain-Driven Design.  
+Just an extra note before moving on: CQRS is not related _per se_ to Domain-Driven Design.  
 I see those 2 as orthogonal architecture patterns, one can be implemented without the other.
-The source of the confusion is likely that they where both described in the "big blue book",
+The source of the confusion is likely that they were both described in the "big blue book",
 by Eric Evans. But I believe it is a mistake to always introduce both together,
 they are better explained separately and they have different use cases.
 
@@ -64,7 +64,7 @@ ElasticSearch can be used as an extremely fast document data storage, with neste
 The bundle provides Doctrine listeners, and you can even [push those to a queue](https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/cookbook/doctrine-queue-listener.md).
 
 I'm not saying this is an _optimal_ implementation. Neither what I described is the only possible implementation.  
-But I find funny that a lot of developers deal with _something close to CQRS_, without even realizing it. Without fancy names or buzzwords. Just because CQRS is a way to solve real problems, and it is not as complex as you may be lead to believe.  
+But I find funny that a lot of developers deal with _something close to CQRS_, without even realizing it. Without fancy names or buzzwords. Just because CQRS is a way to solve real problems, and it is not as complex as you may be led to believe.  
 
 Personal story, on my first contract as a senior consultant, I met a team who implemented CQRS, without knowing it.
 They had a Symfony application with a SQL database full of complex, entangled, data. They had some asynchronous mechanism writing a "flat" version to ElasticSearch. And they had a lot of users - sometimes, even peaks caused by TV ads - consuming that data. They had everything, but the name.  

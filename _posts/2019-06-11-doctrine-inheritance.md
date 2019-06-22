@@ -63,7 +63,7 @@ Here is an example of what the `article` table could look like:
 | 2 | `article_with_picture` | `My first picture!` | `Nec devio nec...` | `romaric.jpg`| `null` |
 | 3 | `article_with_video` | `My first video` | `Aliquam et...` | `null` | `video.mp4` |
 
-This option is not quite scalable. Entities with a dozen of properties will result in an huge database, and we could be concerned about "holes" in data. For instance, in the schema, `picturePath` and `videoPath` will always be nullable.
+This option is not quite scalable. Entities with a dozen of properties will result in a huge database, and we could be concerned about "holes" in data. For instance, in the schema, `picturePath` and `videoPath` will always be nullable.
 
 
 ### Class Table Inheritance
@@ -97,7 +97,7 @@ From a technical point of view, STI and CTI both brings some complexity,  along 
 
 But the biggest issue for me is that **most of the time, having entity inheritance does not make any sense**. My previous example probably looked bad to some of you, and you are right. Composition, ie. having 3 separate `Article`, `Picture` and `Video` entities, would have been a better choice.  
 On real-world cases, I remember seeing only once entity polymorphism being justified. At that time, I implemented CTI, but later technical limitations, especially related to querying, slowed down the project.
-**Hence my piece of advice: avoid STI and CTI.**
+**Hence, my piece of advice: avoid STI and CTI.**
 
 
 ## Mapped Superclass
@@ -105,8 +105,8 @@ On real-world cases, I remember seeing only once entity polymorphism being justi
 There is another type reference in Doctrine documentation I skipped: Mapped Superclass.
 That one is more of a _mapping trick_, because it won't impact database schema. The "mapped superclass", the parent class, is not an entity. It merely provides some properties to children, which will be stored in every child table.
 
-The perfect example is the `User` class from [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/config/doctrine-mapping/User.orm.xml). Typically your project `User` entity class will extend it, it provides some base fields (`email`, `password`...).
-Oustide of that very specific scenario, ie. of a bundle providing a "base" entity, I don't see much use to it.
+The perfect example is the `User` class from [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle/blob/master/Resources/config/doctrine-mapping/User.orm.xml). Typically, your project `User` entity class will extend it, it provides some base fields (`email`, `password`...).
+Outside of that very specific scenario, ie. of a bundle providing a "base" entity, I don't see much use to it.
 
 
 ## Final word
