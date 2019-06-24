@@ -33,7 +33,7 @@ We will explore it in this article, and see how it impacted modern application a
 
 CQRS pattern dictates to separate read from write.
 Each will have different models, respectively _queries_ (think of a "SQL query", it specifies a read) and _commands_ (from the [Command pattern](https://en.wikipedia.org/wiki/Command_pattern)). The basic principle is nothing more, nothing less.  
-A schema is worth a thousand words, let's compare and see the difference in between a _standard_ architecture versus one following CQRS:
+A schema is worth a thousand words, let's compare and see the difference between a _standard_ architecture and one following CQRS:
 
 ![Without CQRS](/assets/images/content/cqrs-standard.png)
 *A Blog web app. One user reads an article, while an admin is writing a new one.*
