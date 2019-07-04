@@ -8,10 +8,10 @@ permalink: /about/
 
 I'm a software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
 I focus mostly on web development, and Symfony framework (certified expert).
-I do some Javascript and devops regulary, too.
+I do some Javascript and devops regularly, too.
 
 I blog here, in English, and on [netinfluence's blog](https://blog.netinfluence.ch), in French.  
-I attend a few conferences every year and occasionnaly do public speaking.
+I attend a few conferences every year and occasionally do public speaking.
 More informations on [Talks]({% link 20talks.md %}) page.
 
 Available for contracts.
