@@ -6,9 +6,9 @@ categories: [Software architecture, Domain-Driven Design, Symfony, Doctrine]
 description: |
   Lorem ipsum
 image:
-  file: assets/images/posts/jaman.jpg
-  #facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/jaman.jpg
-  #description: Around rochers de Naye and col de Jaman
+  file: assets/images/posts/tsanfleuron.jpg
+  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/tsanfleuron.jpg
+  description: Tsanfleuron glacier tip - 150 years ago, everything on the picture foreground would have been covered by ice
   #gravity: g_east
 #commentIssueNumber: 5
 ---
