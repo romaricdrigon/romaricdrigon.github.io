@@ -11,10 +11,26 @@ $content-breakpoint: 800px;
     Some customization over Minima provided CSS
 */
 
-.post-title {
-    font-size: 36px;
+.wrapper {
+    max-width: calc(900px - (30px * 2)); // a little bit bigger
 }
 
+// To customize items from bot hthe post list and single post page
+.post {
+    margin-bottom: 30px;
+
+    strong {
+        font-weight: 500;
+        padding: 5px 3px;
+        background-color: #f9f4d4;
+    }
+}
+
+// Single post page
+.post-title {
+    font-size: 36px;
+    line-height: 1.3;
+}
 .post-content {
     h2 {
         font-size: 28px;
@@ -31,10 +47,8 @@ $content-breakpoint: 800px;
         }
     }
 
-    strong {
-        font-weight: 500;
-        padding: 5px 3px;
-        background-color: #f9f4d4;
+    .highlight {
+        margin-bottom: 30px;
     }
 
     @media screen and (max-width: $content-breakpoint) {
@@ -75,12 +89,6 @@ svg.rss-icon {
 /*
     Our extra elements
 */
-
-.post-list {
-    .post {
-        margin-bottom: 30px;
-    }
-}
 
 .post-img {
     position: relative;
