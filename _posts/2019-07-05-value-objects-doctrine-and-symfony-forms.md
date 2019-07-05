@@ -9,8 +9,7 @@ image:
   file: assets/images/posts/tsanfleuron.jpg
   facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/tsanfleuron.jpg
   description: Tsanfleuron glacier tip - 150 years ago, everything on the picture foreground would have been covered by ice
-  #gravity: g_east
-#commentIssueNumber: 5
+commentIssueNumber: 6
 ---
 
 To continue my series on software architecture, I will go through different concepts and patterns popular in Domain-Driven Design.
