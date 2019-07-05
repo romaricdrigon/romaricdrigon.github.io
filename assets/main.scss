@@ -2,18 +2,15 @@
 # Original SCSS file: https://github.com/jekyll/minima/blob/master/_sass/minima.scss
 ---
 
-@import "minima";
+// Customization over Minima
+$base-line-height: 1.6;
+$content-width: 900px;
 
-// We re-use breakpoint from theme.
-$content-breakpoint: 800px;
+@import "minima";
 
 /*
     Some customization over Minima provided CSS
 */
-
-.wrapper {
-    max-width: calc(900px - (30px * 2)); // a little bit bigger
-}
 
 // To customize items from bot hthe post list and single post page
 .post {
@@ -51,7 +48,7 @@ $content-breakpoint: 800px;
         margin-bottom: 30px;
     }
 
-    @media screen and (max-width: $content-breakpoint) {
+    @media screen and (max-width: $on-laptop) {
         // We want table to scroll on modile, instead of breaking layout
         table {
             display: inline-block;
@@ -100,7 +97,7 @@ svg.rss-icon {
     margin: 0 auto;
 
     // We remove overlap effect below that size.
-    @media screen and (max-width: $content-breakpoint) {
+    @media screen and (max-width: $on-laptop) {
         max-height: 40vh;
         width: 100%;
         min-width: auto;
@@ -127,7 +124,7 @@ svg.rss-icon {
             padding-bottom: 30px;
             background: $background-color;
 
-            @media screen and (max-width: $content-breakpoint) {
+            @media screen and (max-width: $on-laptop) {
                 margin-top: 0;
             }
         }
@@ -138,6 +135,7 @@ svg.rss-icon {
     font-style: italic;
 }
 
+// Our comments module
 .comments {
     h2 {}
 
