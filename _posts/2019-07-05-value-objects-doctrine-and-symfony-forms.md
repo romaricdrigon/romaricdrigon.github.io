@@ -4,11 +4,12 @@ title: "Stop repeating yourself in Doctrine and Symfony forms with Value objects
 date: 2019-07-05 16:53:45 +0200
 categories: [Software architecture, Domain-Driven Design, Symfony, Doctrine]
 description: |
-  Lorem ipsum
+    I will go through different concepts and patterns popular in Domain-Driven Design. The first concept is **value object**.
+    Practically, it helps to avoid repeating yourself in your Doctrine entities and inside Symfony forms.
 image:
-  file: assets/images/posts/tsanfleuron.jpg
-  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/tsanfleuron.jpg
-  description: Tsanfleuron glacier tip - 150 years ago, everything on the picture foreground would have been covered by ice
+    file: assets/images/posts/tsanfleuron.jpg
+    facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/tsanfleuron.jpg
+    description: Tsanfleuron glacier tip - 150 years ago, everything on the picture foreground would have been covered by ice
 commentIssueNumber: 6
 ---
 
