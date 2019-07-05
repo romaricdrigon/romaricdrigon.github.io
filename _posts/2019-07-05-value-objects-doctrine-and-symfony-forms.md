@@ -39,51 +39,51 @@ Value objects have a few interesting properties, since they represent _one_ valu
 
 First of all, you can't build a `Money` value object without giving an amount and a currency. In DDD terms, we would say that's an _invariant_ you have to respect, otherwise your object will be in an unstable state. So a **constructor with arguments** makes more sense than setters:  
 ```php
-    // is $someMoney object below ready to use?
-    $someMoney = (new Money())
-        ->setAmount(100);
-    // No, it is missing the currency!
+// is $someMoney object below ready to use?
+$someMoney = (new Money())
+    ->setAmount(100);
+// No, it is missing the currency!
 
-    // Constructor arguments: that's better
-    $someMoney = new Money(100, 'CHF');
+// Constructor arguments: that's better
+$someMoney = new Money(100, 'CHF');
 ```
 
 Secondly, for convenience, you want to add some **comparison method** to your objects.
 In example:
 ```php
-    $myMoney = new Money(100, 'CHF');
-    $aPrice = new Money(99, 'CHF');
+$myMoney = new Money(100, 'CHF');
+$aPrice = new Money(99, 'CHF');
 
-    // Comparing is verbose,
-    // and requires to know the inner working of Money object
-    // (it has an amount, a currency...)
-    if ($myMoney->getAmountInCents() === $aPrice->getAmountInCents()
-        && $myMoney->getCurrency() === $aPrice->getCurrency()
-    ) {
-        echo 'equals!';
-    }
+// Comparing is verbose,
+// and requires to know the inner working of Money object
+// (it has an amount, a currency...)
+if ($myMoney->getAmountInCents() === $aPrice->getAmountInCents()
+    && $myMoney->getCurrency() === $aPrice->getCurrency()
+) {
+    echo 'equals!';
+}
 
-    // An "equals()" methods simplifies your code,
-    // and hide implementation details in your object
-    if ($myMoney->equals($aPrice)) {
-        echo 'equals!';
-    }
+// An "equals()" methods simplifies your code,
+// and hide implementation details in your object
+if ($myMoney->equals($aPrice)) {
+    echo 'equals!';
+}
 ```
 
 Last but not least, objects are passed by reference in PHP. This leads to subtle issues, sometimes counter-intuitive and hard to debug.  
 In example, let's imagine we are working on an e-commerce software:  
 ```php
-    $price = new Money(99, 'CHF');
-    $product = new Product();
-    $product->setPrice($price);
+$price = new Money(99, 'CHF');
+$product = new Product();
+$product->setPrice($price);
 
-    // Somewhere else in your code...
-    $price->setAmount(49);
-    $cheapProduct = new Product();
-    $cheapProduct->setPrice($price);
+// Somewhere else in your code...
+$price->setAmount(49);
+$cheapProduct = new Product();
+$cheapProduct->setPrice($price);
 
-    echo $product->getDisplayPrice();
-    // displays '49 CHF': the $price was modified, so both products change prices
+echo $product->getDisplayPrice();
+// displays '49 CHF': the $price was modified, so both products change prices
 ```
 Make your value objects **immutable**. You may think you will never fall for something as simple as in my example, but in real life, in thousands of lines of code, it happens. Make things simpler and less error prone from the beginning.   
 
