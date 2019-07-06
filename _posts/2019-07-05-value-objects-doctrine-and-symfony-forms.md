@@ -23,14 +23,14 @@ Eventually, it could also help make your Symfony forms more readable. A common f
 ## Definition
 
 A Value object is a PHP* object representing a piece of information. In a more formal vocabulary, it represents a specific state.  
-A very straightforward example: `Money`. "CHF 100" is composed of a currency (Swiss Francs), and an amount (100), with a given precision (watch out for floating-point precision in PHP!).  
+Here is a very straightforward example: `Money`. "CHF 100" is composed of a currency (Swiss Francs), and an amount (100), with a given precision (watch out for floating-point precision in PHP!).  
 I could write down an amount as an integer, ie. `100` but then it is up to you to guess the units (is it 100 CHF or 1 CHF with cent precision?) and comparing 2 values requires making sure the currency is the same. Here a value object is useful to fully represent all details.   
-Moreover, we could use the value object to hold methods useful for any monetary value (ie., convert to another currency...).
+Moreover, we could use the value object to hold methods that are useful for any monetary value (ie., convert to another currency...).
 
 Let's take another example: an `Address`.    
 A specific address has nothing unique, it is equal to any other address with the same street, the same street number and the same city. So it is a value object, and not an _entity_.  
-Here I used the **"equality" rule-of-thumb**, keep that in mind when you don't know if anything is an entity or a value-object.  
-Similarly, two `Money` objects are equal if they have the same amount and the same currency. Versus a `User` person, who will typically be represented by an entity: 2 users of your software are not the same if they have the same name (!).
+Here I used the **"equality" rule-of-thumb**, keep when in mind when you don't know if something is an entity or a value-object.  
+Similarly, two `Money` objects are equal if they have the same amount and the same currency. Versus a `User` person, who will typically be represented by an entity: 2 users of your software are not the same even if they have the same name (!).
 
 _* Note: PHP or any object-oriented language. Java, C#, anything with classes._
 
@@ -38,10 +38,10 @@ _* Note: PHP or any object-oriented language. Java, C#, anything with classes._
 
 Value objects have a few interesting properties, since they represent _one_ value.  
 
-First of all, you can't build a `Money` value object without giving an amount and a currency. In DDD terms, we would say that's an _invariant_ you have to respect, otherwise your object will be in an unstable state.  
+First, you can't build a `Money` value object without giving an amount and a currency. In DDD terms, we would say that's an _invariant_ you have to respect, otherwise your object will be in an unstable state.  
 So a **constructor with arguments** makes more sense than setters:  
 ```php
-// is $someMoney object below ready to use?
+// is the $someMoney object below ready to use?
 $someMoney = (new Money())
     ->setAmount(100);
 // No, it is missing the currency!
@@ -73,7 +73,7 @@ if ($myMoney->equals($aPrice)) {
 ```
 
 Last but not least, objects are passed by reference in PHP. This leads to subtle issues, sometimes counter-intuitive and hard to debug.  
-In example, let's imagine we are working on an e-commerce software:  
+For example, let's imagine we are working on an e-commerce software:  
 ```php
 $price = new Money(99, 'CHF');
 $product = new Product();
@@ -88,9 +88,9 @@ echo $product->getDisplayPrice();
 // displays '49 CHF': the $price was modified, so both products change prices
 ```
 Make your value objects **immutable**.  
-You may think you will never fall for something as simple as in my example, but in real life, in thousands of lines of code, it happens. Make things simpler and less error prone from the beginning.   
+You may think you will never fall for something as simple as in my example, but in real life, where you are writing thousands of lines of code, it happens. Make things simpler and less error prone from the beginning.   
 
-To wrap up, my example `Money` value object class would look like this:  
+To wrap up, the `Money` value object class would look like this:  
 ```php
 class Money
 {
@@ -187,16 +187,16 @@ Let's go back to the `Address` example I gave earlier.
 In our e-commerce shop, a Customer may have different addresses in his account. When placing an Order, he may choose one as billing address, and one as shipping address. It is tempting to want to store all those in the same `address` table, so that would be an `Address` entity _for Doctrine_.  
 
 Something crucial here is to see that **Doctrine vocabulary is not DDD vocabulary**. They have some differences, because **Domain-Driven Design vocabulary is about your domain**, whereas Doctrine is about persistence, that is to say **infrastructure**.  
-So as long as you never expose an `Address ID` in your domain code, which would be very wrong since we considered addresses as value objects, they can be stored any way your infrastructure implementation like.  
+So as long as you never expose an `Address ID` in your domain code, which would be very wrong since we considered addresses as value objects, they can be stored any way that fits your infrastructure implementation.  
 
-**Always think about your domain first**, about what makes sense. In my current example, does it make sense for `Addresses` to be shared? If a customer edits an address, should his past order address be updated? Is the same street/street number/city sufficient to say 2 addresses are equals? etc.  
+**Always think about your domain first**, about what makes sense. In my current example, does it make sense for `Addresses` to be shared? If a customer edits an address, should his past order address be updated? Is the same street/street number/city sufficient to say that 2 addresses are equals? etc.  
 <small>(and it may prove my example lousy!)</small>
 
 ## Value objects and Symfony forms
 
 Since we now have some `Address` object, every time we need to edit some address through a form, we can use an `AddressType` instead of mapping to every single property.
 
-In example, it means that instead of having that:
+In example, it means that instead of having this:
 ```php
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -247,4 +247,4 @@ class AddressType extends AbstractType
 ## Final word
 
 I hope I have convinced you that **patterns traditionally associated with DDD can be useful in every project**, even if not sticking to a DDD-only approach.  
-In that last part, we bound a Symfony form directly to a Doctrine entity. It is something which can cause issues, we can find a better way to do things using DTOs. It may be the topic of another article, or if you like some existing resources, feel free to post those in comments below :)
+In that last part, we bound a Symfony form directly to a Doctrine entity. It is something that can cause issues, we can find a better way to do things using DTOs. It may be the topic of another article, or if you like some existing resources, feel free to post those in comments below :)
