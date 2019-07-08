@@ -49,6 +49,18 @@ $content-width: 900px;
 
     .highlight {
         margin-bottom: 30px;
+
+        // We reduce indentation width (white-space) on mobile.
+        // To do this, we decreased font anything for anything not in <span>
+        @media screen and (max-width: $on-laptop) {
+            code {
+                font-size: 8px;
+
+                span {
+                    font-size: 15px; // The theme default
+                }
+            }
+        }
     }
 
     @media screen and (max-width: $on-laptop) {
