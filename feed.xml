@@ -82,9 +82,13 @@
 
       {%- if post.image.facebook -%}
         <media:thumbnail
-          xmlns:media="http://search.yahoo.com/mrss/"
-          url="{{ post.image.facebook | xml_escape }}"
-          width="1024" />
+            xmlns:media="http://search.yahoo.com/mrss/"
+            url="{{ post.image.facebook | xml_escape }}"
+            width="1024" />
+        {%- comment -%} and enclosure is used by some older readers {%- endcomment -%}
+        <link rel="enclosure"
+            href="{{ post.image.facebook | xml_escape }}"
+            type="image/jpeg" />
       {%- endif -%}
     </entry>
   {%- endfor -%}
