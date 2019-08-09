@@ -110,7 +110,7 @@ class User
 
     public function __construct()
     {
-        $this->raiseEvent(new UserCreated($this));
+        $this->raise(new UserCreated($this));
     }
 
     // This method is needed for later
@@ -151,7 +151,7 @@ class User implements RaiseEventsInterface
 
     public function __construct()
     {
-        $this->raiseEvent(new UserCreated($this));
+        $this->raise(new UserCreated($this));
     }
 }
 ```
@@ -224,14 +224,14 @@ class User implements RaiseEventsInterface
 
     public function __construct()
     {
-        $this->raiseEvent(new UserCreated($this));
+        $this->raise(new UserCreated($this));
     }
 
     public function enable(): void
     {
         // We can do more checks, typically, we don't want even to be triggered twice
         if (false === $this->enabled) {
-            $this->raiseEvent(new UserEnabled($this));
+            $this->raise(new UserEnabled($this));
         }
 
         $this->enabled = true;
@@ -242,7 +242,7 @@ class User implements RaiseEventsInterface
      */
     public function onRemove()
     {
-        $this->raiseEvent(new UserRemoved($this));
+        $this->raise(new UserRemoved($this));
     }
 }
 ```  
