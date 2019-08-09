@@ -31,13 +31,13 @@ Think of a Bank account, it has a balance, and sometimes transactions happen (yo
 Every time the balance is modified, you may want to initiate some actions, like warning the user, checking for fraud... No matter what caused it. Having imperative code, calling a method every time, is a burden. Imagine calling this method when someone sends you money, but also when bank is charging you a fee, or interests are paid, etc. It will become very complex, as it may need more and more parameters.    
 Throwing an event, as `AccountBalanceModified`, `MoneySent`, `InterestsPaid`, etc., allows to decouple what happened from what will happen (in event listeners). It also helps to isolate different technical domain, you don't want to handle e-mail or push notifications in the same piece of code which updates the account balance.  
 
-Domain events were first defined by [Martin Fowler](https://martinfowler.com/eaaDev/DomainEvent.html) around 2005, though at first they were seen in a more specific way. Eric Evans later insisted on how important they are when using Domain-Driven Design, and he said he regretted not to have put more emphasis on those earlier (you can watch his talk [here](https://www.infoq.com/presentations/ddd-eric-evans/), the part about events starts around 14:00). If your are not convinced yet, please check [this article](https://beberlei.de/2012/08/25/decoupling_applications_with_domain_events.html) from Benjamin Eberlei, which focuses on how they are beneficial to decoupling your application.
+Domain events were first defined by [Martin Fowler](https://martinfowler.com/eaaDev/DomainEvent.html) around 2005, though at first they were seen in a more specific way. Eric Evans later insisted on how important they are when using Domain-Driven Design, and he said he regretted not to have put more emphasis on those earlier (you can watch his talk [here](https://www.infoq.com/presentations/ddd-eric-evans/), the part about events starts around 14:00). If you are not convinced yet, please check [this article](https://beberlei.de/2012/08/25/decoupling_applications_with_domain_events.html) from Benjamin Eberlei, which focuses on how they are beneficial to decoupling your application.
 
 Events are typically named with a verb in the past tense (ie., `UserCreated`). You don't need to add any `Event` suffix, but you should group them in a specific namespace. I like `Model/Event`, not to mix them up with (potential) infrastructure events (in `Event/`).   
 Second, domain events should encapsulate all relevant data, as they represent a "snapshot" of something which happened. That rule is sometimes more challenging to implement, as objects are always passed by reference in PHP. But you don't want a listener to be able to modify your entity freely, it would be a side effect and prone to create issues later on. So it is better to pass either scalar data either immutable data, and maybe sometimes you will need to clone an object.  
 Finally, as usual, I recommend those to be immutable (no setters, use a constructor with arguments).  
 
-To wrap up, here's how I would implement the event thrown when an User is created:
+To wrap up, here's how I would implement the event thrown when a User is created:
 ```php
 namespace App\Model\Event;
 
@@ -78,7 +78,7 @@ class UserCreated extends Event
 
 ## How they are thrown
 
-Domain events have something very unique there, something you may be unfamiliar with: **they should be throw by entities*.**  
+Domain events have something unique there, something you may be unfamiliar with: **they should be thrown by entities*.**  
 Why? In substance, they are part of the domain, so they should be handled by the domain.  
 And not by a controller, a manager, anything from your application (or infrastructure). In practice, doing so will lead to code duplication and inconsistencies. It would be easy to forget to fire the `UserCreated` event if you create `User` entities in three different places in your application. Some of those may even be out of your reach, for example if you use [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) (not that I would recommend FOSUserBundle, but having entities created by someone else is a relatively common scenario).
 
@@ -86,7 +86,7 @@ Last but not least, it may be tempting to use Doctrine listeners, but in practic
 Doctrine listeners have many technical limitations regarding how you can create new entities and whether you can or can not modify relationships, long-term, it will be a burden. And again, they are infrastructure code, it should not be responsible for domain-related logic.
 **So Doctrine listeners can not replace events raised from your entity, and they should not call directly domain events handlers.**
 
-_* Note: in "pure DDD", they are throw by aggregates. Which will likely be (Doctrine) entities in a relatively simple applications._
+_* Note: in "pure DDD", they are thrown by aggregates. Which will likely be (Doctrine) entities in a relatively simple applications._
 
 ## Implementation: the entity side
 
@@ -250,7 +250,7 @@ class User implements RaiseEventsInterface
 ## Implementation: dispatching events
 
 Dispatching events is relatively straightforward. We can use [Symfony EventDispatcher component](https://symfony.com/doc/current/components/event_dispatcher.html).  
-Domain Events are dispatched, and they will be routed to events subscribers. I advise to use [subscribers](https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers) rather than listeners, it is easier to deal with events mapping configuration in code rather than in service declaration.
+Domain Events are dispatched, and they will be routed to events subscribers. I advise using [subscribers](https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers) rather than listeners, it is easier to deal with events mapping configuration in code rather than in service declaration.
 Each event subscriber can listen to one or more events ; you can also have multiple subscriber for the same event. There's no definitive rule there, basically **I would keep subscribers short and focused**. That way, it is easier to test and to understand what's going on.
 
 ![Events profiler](/assets/images/content/events-profiler.png)
@@ -459,6 +459,6 @@ class ForgottenDomainEventsSubscriber implements EventSubscriberInterface
 
 ## Final word
 
-**Domain Events are a powerful pattern**, which can be implemented in many different ways.  
+**Domain Events are a powerful pattern**, which can be implemented in many ways.  
 Here I wanted to explain a relatively simple one, which does not compromise consistency or rely too much on manual calls. It is also compatible with "continuous enhancement" of an application, it does not require to rewrite all persistence calls to use another mechanism than Doctrine provided EntityManager (ie., a command bus...).  
 In my experience, I found those pieces of code to work well, I hope they can help you too :)
