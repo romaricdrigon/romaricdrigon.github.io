@@ -7,9 +7,10 @@ description: |
     Domain Events represents what happened in your application. They are a lesser known concept, but they will help you immensely to decouple your application.
     Implementing them in a Symfony application, typically with Doctrine ORM, is challenging. Let's find the best way together.
 image:
-    file: assets/images/posts/from-britannia-hut.jpg
-    facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/from-britannia-hut.jpg
+    file: assets/images/posts/britannia-hut.jpg
+    facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024,h_535,c_lfill/githubio/assets/images/posts/britannia-hut.jpg
     description: Allalin glacier and Schwazberg glacier, from Britannia hut, 3030m, Saas-Fee
+    gravity: g_north
 commentIssueNumber: 7
 ---
 
