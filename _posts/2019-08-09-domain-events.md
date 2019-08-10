@@ -379,7 +379,7 @@ class DomainEventsCollector implements EventSubscriber
 }
 ```
 
-Now we need to make sure to call `DomainEventsCollector::dispatchCollectedEvents()` after we flush database.  
+Now we need to make sure to call `dispatchCollectedEvents()` after we flush database.  
 First option is to call manually, from our controllers and commands (commands from Symfony Console, which include data fixtures).  
 Second option, if you want to automate it, is to have an event subscriber on `request.terminate` and `console.terminate`.    
 
