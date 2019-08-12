@@ -55,7 +55,7 @@ class UserCreated extends Event
     public function __construct(User $user)
     {
         $this->date = new \DateTimeImmutable('now');
-        $this->userId = $user->getId(); // It could be used to identify User later
+        $this->userId = $user->getId(); // UUID - it could be used to identify User later
         $this->emailAddress = $user->getEmailAddress(); // We may want to send an e-mail
     }
 
@@ -64,7 +64,7 @@ class UserCreated extends Event
         return $this->date;
     }
 
-    public function getUserId(): int
+    public function getUserId(): string
     {
         return $this->userId;
     }
@@ -99,17 +99,28 @@ namespace App\Entity;
 
 use App\Model\Event\UserCreated;
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
 
 /**
  * @ORM\Entity
  */
 class User
 {
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\Id
+     */
+    private $id;
+
     // We have to store events in the entity
     protected $events = [];
 
     public function __construct()
     {
+        // We need to have the ID set before the event,
+        // UUID (and not DB ID) are the best option.
+        $this->id = Uuid::uuid4();
+
         $this->raise(new UserCreated($this));
     }
 
@@ -149,8 +160,12 @@ class User implements RaiseEventsInterface
 {
     use RaiseEventsTrait;
 
+    // ...
+
     public function __construct()
     {
+        $this->id = Uuid::uuid4();
+
         $this->raise(new UserCreated($this));
     }
 }
@@ -219,11 +234,19 @@ class User implements RaiseEventsInterface
 {
     use RaiseEventsTrait;
 
+    /**
+     * @ORM\Column(type="string")
+     * @ORM\Id
+     */
+    private $id;
+
     // Let's imagine we have a "enabled" boolean
     private $enabled;
 
     public function __construct()
     {
+        $this->id = Uuid::uuid4();
+
         $this->raise(new UserCreated($this));
     }
 
