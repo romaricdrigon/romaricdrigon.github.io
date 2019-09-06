@@ -6,15 +6,13 @@ permalink: /about/
 
 <img src="/assets/images/romaric.jpg" class="profile-img" />
 
-I'm a software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
+I'm a software engineer at [ASIT VD](https://www.asitvd.ch/) in Lausanne, Switzerland.
 I focus mostly on web development, and Symfony framework (certified expert).
 I do some Javascript and devops regularly, too.
 
-I blog here, in English, and on [netinfluence's blog](https://blog.netinfluence.ch), in French.  
+I blog here, in English. I also blogged in French on [netinfluence's blog](https://blog.netinfluence.ch).  
 I attend a few conferences every year and occasionally do public speaking.
 More informations on [Talks]({% link 20talks.md %}) page.
-
-Available for contracts.
 
 
 ## Contact details

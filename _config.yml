@@ -3,14 +3,10 @@ title: "Romaric Drigon"
 email: romaric.drigon@gmail.com
 description: |-
   Romaric Drigon's personal blog.
-  I'm a software engineer at netinfluence, in Lausanne, Switzerland.
+  I'm a software engineer in Lausanne, Switzerland.
   I write mainly about web development and Symfony framework.
   From time to time, I will publish opinion posts about web development,
   websecurity or software engineering in general.
-#    Software engineer and trainer at [netinfluence](https://netinfluence.ch) in Lausanne, Switzerland.
-#    Interested in all things Symfony related ; devops ; web development.
-#    Symfony certified expert, consultant.
-#    Available for contracts.
 url: "https://romaricdrigon.github.io"
 baseurl: "" # the subpath of your site
 show_excerpts: true

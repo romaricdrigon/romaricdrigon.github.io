@@ -9,7 +9,7 @@ Vous trouverez ici tous les contenus que j'ai écrit ou présentés en français
 
 ## Articles de blogs
 
-J'écris régulièrement sur le [blog de netinfluence](https://blog.netinfluence.ch)
+J'ai écris pendant quelques temps sur le [blog de netinfluence](https://blog.netinfluence.ch)
 ([tous mes articles](https://blog.netinfluence.ch/author/romaric/)).
 
 Sur Symfony:
