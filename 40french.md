@@ -9,7 +9,7 @@ Vous trouverez ici tous les contenus que j'ai écrit ou présentés en français
 
 ## Articles de blogs
 
-J'ai écris pendant quelques temps sur le [blog de netinfluence](https://blog.netinfluence.ch)
+J'ai écrit pendant quelques temps sur le [blog de netinfluence](https://blog.netinfluence.ch)
 ([tous mes articles](https://blog.netinfluence.ch/author/romaric/)).
 
 Sur Symfony:
@@ -40,4 +40,4 @@ Passées:
  - [Éviter un contrôleur de 1000 lignes: vite, un bus de commande!](https://speakerdeck.com/romaricdrigon/eviter-un-controleur-de-1000-lignes-vite-un-bus-de-commande) @ SymfonyLive Paris 2018, Unconference
 
 À venir:
- - Sujet TBA @ AFUP Poitiers, 26/09/2019
+ - Structurer une application métier avec Symfony @ AFUP Poitiers, 26/09/2019
