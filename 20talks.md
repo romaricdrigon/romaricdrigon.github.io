@@ -12,6 +12,6 @@ permalink: /talks/
 
 _See also [past talks in French]({% link 40french.md %}#conférences)_
 
+<!--
 ## Upcoming
-
- - [in French] TBA @ AFUP Poitiers, 26/09/2019
+-->
