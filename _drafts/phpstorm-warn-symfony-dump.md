@@ -6,8 +6,8 @@ categories: [Symfony, PhpStorm]
 description: |-
   Sometimes, I forget a `dump()` in my code, and will commit it. It will crash in "prod" (environment), so you want to avoid that. Here is how to configure PhpStorm to trigger a warning.
 image:
-  file: assets/images/posts/arranmore.jpg
-  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/arranmore.jpg
+  file: assets/images/posts/arranmore-sunset.jpg
+  facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/arranmore-sunset.jpg
   description: Arranmore lighthouse, Donegal county, Ireland
 commentIssueNumber: ~
 ---
