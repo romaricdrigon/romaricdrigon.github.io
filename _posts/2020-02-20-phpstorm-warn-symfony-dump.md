@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to get a PhpStorm warning over Symfony dump()"
-#date: 2020-02-20 17:16:36 +0200
+date: 2020-02-20 18:52:36 +0200
 categories: [Symfony, PhpStorm]
 description: |-
   Sometimes, I forget a `dump()` in my code, and will commit it. It will crash in "prod" (environment), so you want to avoid that. Here is how to configure PhpStorm to trigger a warning.
@@ -12,7 +12,7 @@ image:
 commentIssueNumber: ~
 ---
 
-I haven't been blogging in a while. I was feeling like I was running out of material for my blog posts series, which I would call "Distilled Domain-Driven Design". The conclusion was a presentation at SymfonyCon Amsterdam, [A love story staring Symfony and Domain-Driven Design](https://speakerdeck.com/romaricdrigon/a-love-story-starring-symfony-and-domain-driven-design).  
+I haven't been blogging for a while. I was feeling like I was running out of material for my series of blog posts, which I was used to call "Distilled Domain-Driven Design". The conclusion was a presentation at SymfonyCon Amsterdam, [A love story staring Symfony and Domain-Driven Design](https://speakerdeck.com/romaricdrigon/a-love-story-starring-symfony-and-domain-driven-design).  
 Before moving to another topic, I wanted to share a quick tip. Sometimes, I forget a `dump()` in my code, and will commit it. It will crash in "prod" (environment), so you want to avoid that. Here is how to configure PhpStorm to trigger a warning.
 
 <!-- more -->
