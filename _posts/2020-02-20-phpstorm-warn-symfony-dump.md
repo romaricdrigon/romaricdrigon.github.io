@@ -9,7 +9,7 @@ image:
   file: assets/images/posts/arranmore-sunset.jpg
   facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/arranmore-sunset.jpg
   description: Arranmore lighthouse, Donegal county, Ireland
-commentIssueNumber: ~
+commentIssueNumber: 8
 ---
 
 I haven't been blogging for a while. I was feeling like I was running out of material for my series of blog posts, which I was used to call "Distilled Domain-Driven Design". The conclusion was a presentation at SymfonyCon Amsterdam, [A love story staring Symfony and Domain-Driven Design](https://speakerdeck.com/romaricdrigon/a-love-story-starring-symfony-and-domain-driven-design).  
