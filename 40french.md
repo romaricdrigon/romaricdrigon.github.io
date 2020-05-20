@@ -7,6 +7,18 @@ lang: fr_FR
 
 Vous trouverez ici tous les contenus que j'ai écrit ou présentés en français.
 
+## Conférences
+
+À venir:
+ - Un service, késako ? Conseils pour mieux utiliser l'injection de dépendance @ [SymfonyLive Paris 2020](https://paris2020.live.symfony.com/)
+
+Passées:
+ - [Doctrine en dehors des sentiers battus (v2)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed) @ SymfonyLive Paris 2019
+ - [Doctrine en dehors des sentiers battus](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus) @ SymfonyLive Lille 2019
+ - [Éviter un contrôleur de 1000 lignes: vite, un bus de commande!](https://speakerdeck.com/romaricdrigon/eviter-un-controleur-de-1000-lignes-vite-un-bus-de-commande) @ SymfonyLive Paris 2018, Unconference
+ - [Structurer une application métier avec Symfony](https://speakerdeck.com/romaricdrigon/structurer-une-application-metier-avec-symfony) @ AFUP Poitiers, 26/09/2019
+
+
 ## Articles de blogs
 
 J'ai écrit pendant quelques temps sur le [blog de netinfluence](https://blog.netinfluence.ch)
@@ -31,11 +43,3 @@ Sur des évènements:
 
 Autres sujets:
  - [Créer un guide de style avec Pattern Lab](https://blog.netinfluence.ch/2016/06/07/creer-guide-de-style-pattern-lab/) (06/2016)
-
-## Conférences
-
-Passées:
- - [Doctrine en dehors des sentiers battus (v2)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed) @ SymfonyLive Paris 2019
- - [Doctrine en dehors des sentiers battus](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus) @ SymfonyLive Lille 2019
- - [Éviter un contrôleur de 1000 lignes: vite, un bus de commande!](https://speakerdeck.com/romaricdrigon/eviter-un-controleur-de-1000-lignes-vite-un-bus-de-commande) @ SymfonyLive Paris 2018, Unconference
- - [Structurer une application métier avec Symfony](https://speakerdeck.com/romaricdrigon/structurer-une-application-metier-avec-symfony) @ AFUP Poitiers, 26/09/2019
