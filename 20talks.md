@@ -6,6 +6,7 @@ permalink: /talks/
 
 ## Upcoming
 
+ - Tackling complex domains: strategies and patterns @ [WebMardi](https://www.meetup.com/fr-FR/webmardi/events/271757296/), Lausanne
  - Un service, késako ? Conseils pour mieux utiliser l'injection de dépendance @ [SymfonyLive Paris 2020](https://paris2020.live.symfony.com/) (in French)
 
 
