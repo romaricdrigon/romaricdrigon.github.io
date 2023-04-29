@@ -9,10 +9,7 @@ Vous trouverez ici tous les contenus que j'ai écrit ou présentés en français
 
 ## Conférences
 
-À venir:
- - Un service, késako ? Conseils pour mieux utiliser l'injection de dépendance @ [SymfonyLive Paris 2020](https://paris2020.live.symfony.com/)
-
-Passées:
+ - Un service, késako ? @ [AFUP Day Lille 2021](https://event.afup.org/afup-day-2021/)
  - [Doctrine en dehors des sentiers battus (v2)](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus-7020e5ed-33a1-4f1d-9bf1-ea9062bdf5ed) @ SymfonyLive Paris 2019
  - [Doctrine en dehors des sentiers battus](https://speakerdeck.com/romaricdrigon/doctrine-en-dehors-des-sentiers-battus) @ SymfonyLive Lille 2019
  - [Éviter un contrôleur de 1000 lignes: vite, un bus de commande!](https://speakerdeck.com/romaricdrigon/eviter-un-controleur-de-1000-lignes-vite-un-bus-de-commande) @ SymfonyLive Paris 2018, Unconference
