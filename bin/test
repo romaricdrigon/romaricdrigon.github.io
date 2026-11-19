@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Build the site and run basic sanity checks.
+# Usage: bin/test
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+bundle install --quiet
+bundle exec jekyll doctor
+bundle exec jekyll build --strict_front_matter --trace
+
+fail() { echo "FAIL: $*" >&2; exit 1; }
+
+# Main pages
+for page in index.html 404.html feed.xml sitemap.xml about/index.html talks/index.html francais/index.html; do
+  [ -s "_site/$page" ] || fail "missing _site/$page"
+done
+
+# Every post must be generated
+posts=$(find _posts -name '*.md' | wc -l | tr -d " ")
+generated=$(find _site/20* -name '*.html' | wc -l | tr -d " ")
+[ "$posts" -eq "$generated" ] || fail "$posts posts but $generated generated pages"
+
+# Feed must contain the latest posts (limited to 10, see feed.xml)
+expected=$(( posts < 10 ? posts : 10 ))
+entries=$(grep -cE '<entry[ >]' _site/feed.xml || true)
+[ "$expected" -eq "$entries" ] || fail "expected $expected feed entries, got $entries"
+
+echo "OK: site built, $posts posts generated"
