@@ -9,7 +9,7 @@ image:
   file: assets/images/posts/aletsch.jpg
   facebook: https://res.cloudinary.com/duiajlyml/image/upload/w_1024/githubio/assets/images/posts/aletsch.jpg
   description: Aletsch Glacier, Valais, Switzerland
-commentIssueNumber: ~
+commentIssueNumber: 31
 ---
 
 My last post here dates back to February 2020. Almost seven years later, I am finally rebooting this blog.
