@@ -21,6 +21,13 @@
         {% assign gravity = page.image.gravity | default: 'g_center' %}
         {% assign base_path = 'https://res.cloudinary.com/duiajlyml/image/upload' %}
         <div class="post-img">
+          {%- comment %}
+            Cloudinary only knows images once deployed, so locally we serve the original file.
+          {% endcomment %}
+          {% if jekyll.environment == 'development' %}
+          <img src="{{ page.image.file | relative_url }}" alt="{{ page.title }}"
+               style="width: 100%; height: 100%; object-fit: cover;">
+          {% else %}
           <picture>
             <source
               media="(max-width: 480px)"
@@ -45,6 +52,7 @@
               src="{{ base_path }}/w_1280,h_420,c_lfill,f_auto,{{ gravity }}/dpr_auto/githubio/{{ page.image.file }}"
               alt="{{ page.title }}">
           </picture>
+          {% endif %}
         </div>
       {% endif %}
 
